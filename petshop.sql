@@ -90,10 +90,10 @@ CREATE TABLE `tb_cliente` (
 --
 
 INSERT INTO `tb_cliente` (`CodCliente`, `CodAnimal`, `nomeCliente`, `emailCliente`, `TelefoneCelularCli`, `TelefoneFixoCli`, `enderecoCliente`, `numeroResidenciaCliente`, `bairroCliente`, `cepCliente`, `complementoCliente`, `cpfCliente`) VALUES
-(1, 19, 'ELEN CONCEICAO FERREIRA AFRICO', 'ELEN@HOTMAIL.COM', 15615615615, 1125612123, 'JOSÉ BORGES DO CANTO', 16, 'JARDIM CAMARGO NOVO', '08142010', 'CASAB', '39211358850'),
-(2, 16, 'TESTE', 'ITAIM', 11960164015, 1125612203, 'JOSÉ BORGES DO CANTO', 42, 'JARDIM CAMARGO NOVO', '08142010', '262', '08950320827'),
-(4, 22, 'JOAO MARCOS AFRICO DA SILVA', 'JOAOZERAS@HOTMAIL.COM', 11960164015, 1125612203, 'JOSÉ BORGES DO CANTO', 16, 'JARDIM CAMARGO NOVO', '08142010', 'CASA 2', '40927503824'),
-(5, 22, 'DIOGO', 'JOAJO', 15615615615, 1515615615, 'JOSÉ BORGES DO CANTO', 16, 'JARDIM CAMARGO NOVO', '08142010', 'CASA', '34120579832');
+(1, 19, '###', '######@HOTMAIL.COM', ########, ######, '############', 16, '##############', '#######', '###', '######'),
+(2, 16, 'TESTE', 'ITAIM', ###########, #########, 'J#####', 42, '##############', '############', '262', '#########'),
+(4, 22, 'JOAO ########## SILVA', '#3##@HOTMAIL.COM', #########, ############, '#############O', 16, '#########', '######', 'CASA 2', '#######'),
+(5, 22, 'DIOGO', 'JOAJO', 15615615615, 1515615615, '##############', 16, 'J##########O', '#######', 'CASA', '##########');
 
 -- --------------------------------------------------------
 
@@ -143,7 +143,7 @@ CREATE TABLE `tb_funcionario` (
 --
 
 INSERT INTO `tb_funcionario` (`codFuncionario`, `nomeFuncionario`, `sobrenomeFuncionario`, `emailFuncionario`, `telefoneFixoFunc`, `telefoneCelularFunc`, `enderecoFuncionario`, `bairroFuncionario`, `cepFuncionario`, `numeroResidenciaFuncionario`, `complementoFuncionario`) VALUES
-(1, 'ALBERTO DA SILVA', 'AFRICO', 'ALBERTDASILVA@GMAIL.COM', 1122569951, 11564888448, 'JOSÉ BORGES DO CANTO', 'JARDIM CAMARGO NOVO', '08142010', 16, 'CASA ');
+(1, 'ALBERTO DA SILVA', 'AFRICO', 'ALBERTDASILVA@GMAIL.COM', 1122569951, 11564888448, 'JOSÉ BORGES DO CANTO', 'JARDIM CAMARGO NOVO', '###########', 16, 'CASA ');
 
 -- --------------------------------------------------------
 
@@ -217,7 +217,7 @@ CREATE TABLE `tb_veterinario` (
 --
 
 INSERT INTO `tb_veterinario` (`codVeterinario`, `nomeVeterinario`, `sobrenomeVeterinario`, `crmv`, `especializacao`, `enderecoVeterinario`, `bairroVeterinario`, `cepVeterinario`, `numeroResidenciaVeterinario`, `complementoVeterinario`, `emailVeterinario`, `telefoneFixoVet`, `telefoneCelularVet`) VALUES
-(2, 'ELEN', 'AFRICO DA SILVA', '1148', 'CIRURGIA', 'LORENA', 'JARDIM PAULISTA', '01424002', 54, 'PREDIO 2', 'ELEN2@GMAIL.COM', 1125612203, 11970154515);
+(2, 'ELEN', 'AFRICO DA SILVA', '1148', 'CIRURGIA', 'LORENA', 'JARDIM PAULISTA', '01424002', 54, 'PREDIO 2', '#######@GMAIL.COM', ########, #########);
 
 --
 -- Indexes for dumped tables
