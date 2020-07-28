@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB9D37BD-179D-4D68-9D5C-386F76DDFDDA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Consultas_medicas</RootNamespace>
+    <AssemblyName>Consultas_medicas</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Consultas_medicas.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>conexao\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.visualstudio">
+      <HintPath>..\..\..\..\..\..\Program Files\MySQL\v2\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AnimalBLL.cs" />
+    <Compile Include="BLL\ClienteBLL.cs" />
+    <Compile Include="BLL\ConsultaBLL.cs" />
+    <Compile Include="BLL\FuncionarioBLL.cs" />
+    <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\VeterinarioBLL.cs" />
+    <Compile Include="BuscaEndereco.cs" />
+    <Compile Include="consultaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>consultaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="consultasmedicasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>consultasmedicasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_appDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Consulta_appDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\AnimaisDAO.cs" />
+    <Compile Include="DAO\ClientesDAO.cs" />
+    <Compile Include="DAO\conexao.cs" />
+    <Compile Include="DAO\ConsultasDAO.cs" />
+    <Compile Include="DAO\FuncionariosDAO.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\VeterinariosDAO.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_animal.Designer.cs">
+      <DependentUpon>form_animal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_cadastrar_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_cadastrar_login.Designer.cs">
+      <DependentUpon>Form_cadastrar_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Funcionario.Designer.cs">
+      <DependentUpon>Form_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_medico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_medico.Designer.cs">
+      <DependentUpon>Form_medico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_paciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_paciente.Designer.cs">
+      <DependentUpon>Form_paciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Animais.cs" />
+    <Compile Include="Models\Clientes.cs" />
+    <Compile Include="Models\Consultas.cs" />
+    <Compile Include="Models\Funcionarios.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Veterinarios.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validacao.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_animal.resx">
+      <DependentUpon>form_animal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_cadastrar_login.resx">
+      <DependentUpon>Form_cadastrar_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Funcionario.resx">
+      <DependentUpon>Form_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_medico.resx">
+      <DependentUpon>Form_medico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_paciente.resx">
+      <DependentUpon>Form_paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="consultaDataSet.xsc">
+      <DependentUpon>consultaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="consultaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>consultaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="consultaDataSet.xss">
+      <DependentUpon>consultaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="consultasmedicasDataSet.xsc">
+      <DependentUpon>consultasmedicasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="consultasmedicasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>consultasmedicasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="consultasmedicasDataSet.xss">
+      <DependentUpon>consultasmedicasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Consulta_appDataSet.xsc">
+      <DependentUpon>Consulta_appDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Consulta_appDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Consulta_appDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Consulta_appDataSet.xss">
+      <DependentUpon>Consulta_appDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Cad_consulta.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.ConsultaTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.MedicoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.PacienteTableAdapter.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.ConsultaDataTable.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.ConsultaRow.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.ConsultaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.ConsultaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.MedicoDataTable.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.MedicoRow.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.MedicoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.MedicoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.PacienteDataTable.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.PacienteRow.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.PacienteRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\Consulta_appDataSet.PacienteRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Form_medico.datasource" />
+    <None Include="Properties\DataSources\Form_paciente.datasource" />
+    <None Include="Properties\DataSources\Menu_principal.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.CustomInstaller.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlBulkLoader.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlClientFactory.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlCommand.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlConnection.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlDataAdapter.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlDataReader.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlError.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlException.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlHelper.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlInfoMessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlInfoMessageEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlParameter.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlParameterCollection.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatedEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlRowUpdatingEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScript.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScriptErrorEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScriptErrorEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlScriptEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlStatementExecutedEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlTrace.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.MySqlTransaction.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.MySqlClient.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.Types.MySqlConversionException.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.Types.MySqlDateTime.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.Types.MySqlDecimal.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Consulta_app.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Imagens\logOpET_OF.png" />
+    <None Include="Imagens\LOGOnomePet.png" />
+    <None Include="Resources\cadastroAnimal.png" />
+    <None Include="Resources\cadastroFuncionarios.png" />
+    <None Include="Resources\LOGOnomePet2.png" />
+    <None Include="Resources\LOGOnomePet.png" />
+    <None Include="Resources\desligar1.png" />
+    <None Include="Resources\pessoa-para-pessoa.png" />
+    <None Include="Resources\nova-janela.png" />
+    <None Include="Resources\lista-de-saude-do-gato.png" />
+    <None Include="Resources\excluir.png" />
+    <None Include="Resources\dominio.png" />
+    <None Include="Resources\desligar.png" />
+    <None Include="Resources\logOpET_OF1.png" />
+    <None Include="Resources\logOpET_OF.png" />
+    <None Include="Icones\minimizar m.png" />
+    <None Include="Icones\minimizar.png" />
+    <None Include="Icones\fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

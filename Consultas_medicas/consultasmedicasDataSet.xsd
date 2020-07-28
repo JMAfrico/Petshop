@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="consultasmedicasDataSet" targetNamespace="http://tempuri.org/consultasmedicasDataSet.xsd" xmlns:mstns="http://tempuri.org/consultasmedicasDataSet.xsd" xmlns="http://tempuri.org/consultasmedicasDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="consultamedicaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="consultamedicaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Consultas_medicas.Properties.Settings.GlobalReference.Default.consultamedicaConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="consultaTableAdapter" GeneratorDataComponentClassName="consultaTableAdapter" Name="consulta" UserDataComponentName="consultaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="consultamedicaConnectionString (Settings)" DbObjectName="consulta.consulta" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id_consulta`, `nome_consulta`, `medico_consulta`, `dia`, `id_medico`, `id_paciente` FROM `consulta`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="medicoTableAdapter" GeneratorDataComponentClassName="medicoTableAdapter" Name="medico" UserDataComponentName="medicoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="consultamedicaConnectionString (Settings)" DbObjectName="consulta.medico" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id_nome_medico`, `nome_medico`, `endereco_medico`, `telefone_medico`, `sexo` FROM `medico`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pacienteTableAdapter" GeneratorDataComponentClassName="pacienteTableAdapter" Name="paciente" UserDataComponentName="pacienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="consultamedicaConnectionString (Settings)" DbObjectName="consulta.paciente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id_paciente`, `nome`, `endereco`, `telefone`, `sexo`, `nascimento` FROM `paciente`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbusuariosTableAdapter" GeneratorDataComponentClassName="tbusuariosTableAdapter" Name="tbusuarios" UserDataComponentName="tbusuariosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="consultamedicaConnectionString (Settings)" DbObjectName="consulta.tbusuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `user_name`, `user_sexo`, `login`, `senha` FROM `tbusuarios`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="consultasmedicasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="consultasmedicasDataSet" msprop:Generator_UserDSName="consultasmedicasDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="consulta" msprop:Generator_TableClassName="consultaDataTable" msprop:Generator_TableVarName="tableconsulta" msprop:Generator_TablePropName="consulta" msprop:Generator_RowDeletingName="consultaRowDeleting" msprop:Generator_RowChangingName="consultaRowChanging" msprop:Generator_RowEvHandlerName="consultaRowChangeEventHandler" msprop:Generator_RowDeletedName="consultaRowDeleted" msprop:Generator_UserTableName="consulta" msprop:Generator_RowChangedName="consultaRowChanged" msprop:Generator_RowEvArgName="consultaRowChangeEvent" msprop:Generator_RowClassName="consultaRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="medico" msprop:Generator_TableClassName="medicoDataTable" msprop:Generator_TableVarName="tablemedico" msprop:Generator_TablePropName="medico" msprop:Generator_RowDeletingName="medicoRowDeleting" msprop:Generator_RowChangingName="medicoRowChanging" msprop:Generator_RowEvHandlerName="medicoRowChangeEventHandler" msprop:Generator_RowDeletedName="medicoRowDeleted" msprop:Generator_UserTableName="medico" msprop:Generator_RowChangedName="medicoRowChanged" msprop:Generator_RowEvArgName="medicoRowChangeEvent" msprop:Generator_RowClassName="medicoRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="paciente" msprop:Generator_TableClassName="pacienteDataTable" msprop:Generator_TableVarName="tablepaciente" msprop:Generator_TablePropName="paciente" msprop:Generator_RowDeletingName="pacienteRowDeleting" msprop:Generator_RowChangingName="pacienteRowChanging" msprop:Generator_RowEvHandlerName="pacienteRowChangeEventHandler" msprop:Generator_RowDeletedName="pacienteRowDeleted" msprop:Generator_UserTableName="paciente" msprop:Generator_RowChangedName="pacienteRowChanged" msprop:Generator_RowEvArgName="pacienteRowChangeEvent" msprop:Generator_RowClassName="pacienteRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbusuarios" msprop:Generator_TableClassName="tbusuariosDataTable" msprop:Generator_TableVarName="tabletbusuarios" msprop:Generator_TablePropName="tbusuarios" msprop:Generator_RowDeletingName="tbusuariosRowDeleting" msprop:Generator_RowChangingName="tbusuariosRowChanging" msprop:Generator_RowEvHandlerName="tbusuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="tbusuariosRowDeleted" msprop:Generator_UserTableName="tbusuarios" msprop:Generator_RowChangedName="tbusuariosRowChanged" msprop:Generator_RowEvArgName="tbusuariosRowChangeEvent" msprop:Generator_RowClassName="tbusuariosRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
