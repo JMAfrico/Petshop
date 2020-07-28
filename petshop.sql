@@ -85,16 +85,6 @@ CREATE TABLE `tb_cliente` (
   `cpfCliente` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `tb_cliente`
---
-
-INSERT INTO `tb_cliente` (`CodCliente`, `CodAnimal`, `nomeCliente`, `emailCliente`, `TelefoneCelularCli`, `TelefoneFixoCli`, `enderecoCliente`, `numeroResidenciaCliente`, `bairroCliente`, `cepCliente`, `complementoCliente`, `cpfCliente`) VALUES
-(1, 19, '###', '######@HOTMAIL.COM', ########, ######, '############', 16, '##############', '#######', '###', '######'),
-(2, 16, 'TESTE', 'ITAIM', ###########, #########, 'J#####', 42, '##############', '############', '262', '#########'),
-(4, 22, 'JOAO ########## SILVA', '#3##@HOTMAIL.COM', #########, ############, '#############O', 16, '#########', '######', 'CASA 2', '#######'),
-(5, 22, 'DIOGO', 'JOAJO', 15615615615, 1515615615, '##############', 16, 'J##########O', '#######', 'CASA', '##########');
-
 -- --------------------------------------------------------
 
 --
