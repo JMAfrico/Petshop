@@ -118,59 +118,128 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="img_pata2_60x60_direito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_pata2_60x60_direito.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slide11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Slide1.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icones\minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nova-janela" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nova-janela.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadastroAnimal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastroAnimal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lista-de-saude-do-gato" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lista-de-saude-do-gato.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="desligar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\desligar1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logOpET_OF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logOpET_OF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logOpET_OF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logOpET_OF1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dominio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dominio.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGOnomePet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\LOGOnomePet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LOGOnomePet2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGOnomePet2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="interrogacao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\interrogacao.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pessoa-para-pessoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pessoa-para-pessoa.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fechar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\fechar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_pata2_60x60_cima" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_pata2_60x60_cima.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LOGOnomePet2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGOnomePet2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancelar_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancelar_30px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="desligar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\desligar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadastroFuncionarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastroFuncionarios.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excluir.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGOnomePet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGOnomePet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ok_imagem2_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ok_imagem2_50px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minimizar m" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Icones\minimizar m.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="seta_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta_20px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_editar_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_editar_30px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-vector-right-arrow-icon-png-image_4224405" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-vector-right-arrow-icon-png-image_4224405.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pesquisar_imagem_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pesquisar_imagem_30px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGOnomePet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGOnomePet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOGOnomePet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\LOGOnomePet.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_splash_screen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_splash_screen2.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desligar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desligar1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_pata2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_pata2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lista-de-saude-do-gato" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lista-de-saude-do-gato.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logOpET_OF2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\logOpET_OF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editar_imagem_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar_imagem_30px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_pata_60x60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_pata_60x60.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nova-janela" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nova-janela.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slide1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Slide1.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_voltar_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_voltar_30px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastroFuncionarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastroFuncionarios.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_pata2_60x60_esquerdo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_pata2_60x60_esquerdo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_pata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_pata.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logOpET_OF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logOpET_OF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastroAnimal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastroAnimal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editar_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar_30px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_imagem_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel_imagem_30px.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Img_splash_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Img_splash_screen.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excluir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excluir.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fechar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icones\fechar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logOpET_OF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logOpET_OF1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desligar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\desligar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_pata2_60x60_baixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_pata2_60x60_baixo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="seta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seta.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

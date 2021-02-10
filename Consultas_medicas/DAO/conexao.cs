@@ -12,7 +12,8 @@ namespace Consultas_medicas.DAO
     {
         //string strconecta = "server=localhost;user=root;database=petshop;port=3306;password=root;";//FATEC PC VISUAL 2018
         //string strconecta = "server=localhost;user=root;database=petshop;port=3306;pwd = ;";//PC
-        string strconecta = "server=localhost;user=root;database=petshop;port=3306;pwd = ;";//NOTEBOOK
+       // string strconecta = "server=localhost;user=root;database=petshop;port=3306;pwd = ;";//NOTEBOOK
+        string strconecta = "server=localhost;user=root;database=petshop_2020;port=3306;pwd = ;";//NOTEBOOK
         protected MySqlConnection conection = null;
         
         //MÉTODO PARA ABRIR CONEXAO COM O BANCO

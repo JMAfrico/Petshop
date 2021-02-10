@@ -12,27 +12,27 @@ namespace Consultas_medicas.DAO
     {
         MySqlCommand comando = null;
 
-        // INSERIR CLIENTE
-
-
+        //query para salvar cliente no Banco de dados
         public void Salvar(Clientes clientes)
         { 
             try
             {
                 AbrirConexao();
 
-                    comando = new MySqlCommand("INSERT INTO tb_cliente(CodAnimal,nomeCliente,emailCliente,TelefoneCelularCli,TelefoneFixoCli,enderecoCliente,numeroResidenciaCliente,bairroCliente,cepCliente,complementoCliente,cpfCliente)VALUES (@CodAnimal,@nomeCliente,@emailCliente,@TelefoneCelularCli,@TelefoneFixoCli,@enderecoCliente,@numeroResidenciaCliente,@bairroCliente,@cepCliente,@complementoCliente,@cpfCliente)", conection);
-                    comando.Parameters.AddWithValue("@CodAnimal", clientes.CodAnimal);
+                comando = new MySqlCommand("INSERT INTO tb_cliente(nomeCliente,emailCliente,TelefoneCelularCli,TelefoneFixoCli,enderecoCliente,cidadeCliente,estadoCliente,numeroResidenciaCliente,bairroCliente,cepCliente,complementoCliente,cpfCliente,referencia_cliente)VALUES (@nomeCliente,@emailCliente,@TelefoneCelularCli,@TelefoneFixoCli,@enderecoCliente,@cidadeCliente,@cidadeCliente,@numeroResidenciaCliente,@bairroCliente,@cepCliente,@complementoCliente,@cpfCliente,@referencia_cliente)", conection);
                     comando.Parameters.AddWithValue("@nomeCliente", clientes.nomeCliente);
                     comando.Parameters.AddWithValue("@emailCliente", clientes.emailCliente);
                     comando.Parameters.AddWithValue("@TelefoneCelularCli", clientes.telefoneCelularCli);
                     comando.Parameters.AddWithValue("@TelefoneFixoCli", clientes.telefoneFixoCli);
                     comando.Parameters.AddWithValue("@enderecoCliente", clientes.enderecoCliente);
+                    comando.Parameters.AddWithValue("@cidadeCliente", clientes.cidadeCliente);
+                    comando.Parameters.AddWithValue("@estadoCliente", clientes.estadoCliente);
                     comando.Parameters.AddWithValue("@numeroResidenciaCliente", clientes.numeroResidenciaCliente);
                     comando.Parameters.AddWithValue("@bairroCliente", clientes.bairroCliente);
                     comando.Parameters.AddWithValue("@cepCliente", clientes.cepCliente);
                     comando.Parameters.AddWithValue("@complementoCliente", clientes.ComplementoCliente);
                     comando.Parameters.AddWithValue("@cpfCliente", clientes.cpfCliente);
+                    comando.Parameters.AddWithValue("@referencia_cliente", clientes.referencia_cliente);
 
                     comando.ExecuteNonQuery();
                 
@@ -51,36 +51,9 @@ namespace Consultas_medicas.DAO
             
 
         }
-		
-		//LISTAR NO COMBOBOX O ANIMAL DA TABELA ANIMAIS
-        public DataTable listar()
-        {
-            try
-            {
 
-                AbrirConexao();
 
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                comando = new MySqlCommand("SELECT descricaoAnimal,codAnimal FROM tb_animal", conection);
-                da.SelectCommand = comando;
-                da.Fill(dt);
-
-                return dt;
-
-            }
-            catch (Exception erro)
-            {
-                throw erro;
-            }
-            finally
-            {
-                FecharConexao();
-            }
-
-        }
-		
-		//MOSTRAR A LISTA DE CLIENTES
+        //query para listar clientes do Banco de dados
         public DataTable listarClientes()
         {
             try
@@ -89,7 +62,7 @@ namespace Consultas_medicas.DAO
 
                 DataTable dtclientes = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter();
-                comando = new MySqlCommand("SELECT CodCliente AS 'CODIGO',nomeCliente AS 'CLIENTE',cpfCliente AS 'CPF',emailCliente AS 'EMAIL',TelefoneCelularCli AS 'CELULAR',TelefoneFixoCli AS 'TELEFONE',enderecoCliente AS 'ENDERECO',cepCliente AS 'CEP',bairroCliente AS 'BAIRRO',numeroResidenciaCliente AS 'NUMERO',complementoCliente AS 'COMPLEMENTO' , descricaoAnimal AS 'ANIMAL 'FROM tb_cliente,tb_animal WHERE tb_animal.codAnimal = tb_cliente.CodAnimal ORDER BY CodCliente", conection);
+                comando = new MySqlCommand("SELECT CodCliente AS 'CODIGO' ,nomeCliente AS 'CLIENTE',cpfCliente AS 'CPF',emailCliente AS 'EMAIL',TelefoneCelularCli AS 'CEL' ,TelefoneFixoCli AS 'CEL',enderecoCliente AS 'RUA',cidadeCliente AS 'CIDADE', estadoCliente AS 'ESTADO',cepCliente AS 'CEP' ,bairroCliente AS 'BAIRRO' ,numeroResidenciaCliente AS 'NUM',complementoCliente AS 'COMPLEMENTO', referencia_cliente AS 'REFERENCIA' FROM tb_cliente ORDER BY CodCliente", conection);
                 da.SelectCommand = comando;
                 da.Fill(dtclientes);
                 return dtclientes;
@@ -104,28 +77,55 @@ namespace Consultas_medicas.DAO
                 FecharConexao();
             }
         }
-		
-		// EDITAR CLIENTES
+
+        //query para listar clientes do combobox
+        public DataTable listarCliCombobox()
+        {
+            try
+            {
+                AbrirConexao();
+
+                DataTable dtclientes = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                comando = new MySqlCommand("SELECT CodCliente ,nomeCliente,emailCliente FROM tb_cliente;", conection);
+                da.SelectCommand = comando;
+                da.Fill(dtclientes);
+                return dtclientes;
+
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
+
+        //query para editar cliente no Banco de dados
         public void Editar(Clientes clientes)
         {
             try
             { 
                 AbrirConexao();
 
-                comando = new MySqlCommand("UPDATE tb_cliente SET CodAnimal = @CodAnimal,nomeCliente = @nomeCliente,emailCliente = @emailCliente,TelefoneCelularCli = @TelefoneCelularCli ,TelefoneFixoCli = @TelefoneFixoCli,enderecoCliente = @enderecoCliente,numeroResidenciaCliente = @numeroResidenciaCliente,bairroCliente = @bairroCliente,cepCliente = @cepCliente,complementoCliente = @complementoCliente,cpfCliente = @cpfCliente WHERE CodCliente = @CodCliente", conection);
+                comando = new MySqlCommand("UPDATE tb_cliente SET nomeCliente = @nomeCliente,emailCliente = @emailCliente,TelefoneCelularCli = @TelefoneCelularCli ,TelefoneFixoCli = @TelefoneFixoCli,enderecoCliente = @enderecoCliente, cidadeCliente = @cidadeCliente, estadoCliente = @estadoCliente,numeroResidenciaCliente = @numeroResidenciaCliente,bairroCliente = @bairroCliente,cepCliente = @cepCliente,complementoCliente = @complementoCliente,cpfCliente = @cpfCliente , referencia_cliente = @referencia_cliente WHERE CodCliente = @CodCliente", conection);
 
                 comando.Parameters.AddWithValue("@CodCliente", clientes.CodCliente);
-                comando.Parameters.AddWithValue("@CodAnimal", clientes.CodAnimal);
                 comando.Parameters.AddWithValue("@nomeCliente", clientes.nomeCliente);
                 comando.Parameters.AddWithValue("@emailCliente", clientes.emailCliente);
                 comando.Parameters.AddWithValue("@TelefoneCelularCli", clientes.telefoneCelularCli);
                 comando.Parameters.AddWithValue("@TelefoneFixoCli", clientes.telefoneFixoCli);
                 comando.Parameters.AddWithValue("@enderecoCliente", clientes.enderecoCliente);
+                comando.Parameters.AddWithValue("@cidadeCliente", clientes.cidadeCliente);
+                comando.Parameters.AddWithValue("@estadoCliente", clientes.estadoCliente);
                 comando.Parameters.AddWithValue("@numeroResidenciaCliente", clientes.numeroResidenciaCliente);
                 comando.Parameters.AddWithValue("@bairroCliente", clientes.bairroCliente);
                 comando.Parameters.AddWithValue("@cepCliente", clientes.cepCliente);
                 comando.Parameters.AddWithValue("@complementoCliente", clientes.ComplementoCliente);
                 comando.Parameters.AddWithValue("@cpfCliente", clientes.cpfCliente);
+                comando.Parameters.AddWithValue("@referencia_cliente", clientes.referencia_cliente);
 
                 comando.ExecuteNonQuery();
 
@@ -141,9 +141,9 @@ namespace Consultas_medicas.DAO
             }
 
         }
-		
-		
-		//EXCLUIR CLIENTES
+
+
+        //query para excluir clientes no Banco de dados
 		public void Excluir(Clientes clientes) 
         {
             try
@@ -167,8 +167,10 @@ namespace Consultas_medicas.DAO
                 FecharConexao();
             }
         }
-		
-		public DataTable Pesquisar(Clientes clientes)
+
+
+        //query para pesquisar clientes por nome no Banco de dados
+        public DataTable Pesquisar(Clientes clientes)
         {
             try
             {//Pesquisa DE CLIENTES
@@ -176,8 +178,8 @@ namespace Consultas_medicas.DAO
 
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 DataTable dtclientes = new DataTable();
-                
-                comando = new MySqlCommand("SELECT CodCliente AS 'CODIGO', nomeCliente AS 'CLIENTE', cpfCliente AS 'CPF', emailCliente AS 'EMAIL', TelefoneCelularCli AS 'CELULAR', TelefoneFixoCli AS 'TELEFONE', enderecoCliente AS 'ENDERECO', cepCliente AS 'CEP', bairroCliente AS 'BAIRRO', numeroResidenciaCliente AS 'NUMERO', complementoCliente AS 'COMPLEMENTO' FROM tb_cliente WHERE nomeCliente LIKE @nomeCliente '%' ORDER BY nomeCliente", conection);
+
+                comando = new MySqlCommand("SELECT CodCliente AS 'CODIGO', nomeCliente AS 'CLIENTE', cpfCliente AS 'CPF', emailCliente AS 'EMAIL', TelefoneCelularCli AS 'CELULAR', TelefoneFixoCli AS 'TELEFONE', enderecoCliente AS 'ENDERECO',cidadeCliente AS 'CIDADE', estadoCliente AS 'ESTADO', cepCliente AS 'CEP', bairroCliente AS 'BAIRRO', numeroResidenciaCliente AS 'NUMERO', complementoCliente AS 'COMPLEMENTO',referencia_cliente AS 'REFERENCIA' FROM tb_cliente WHERE nomeCliente LIKE @nomeCliente '%' ORDER BY nomeCliente", conection);
                 comando.Parameters.AddWithValue("@nomeCliente", clientes.nomeCliente);
                 da.SelectCommand = comando;
                 da.Fill(dtclientes);
@@ -194,6 +196,7 @@ namespace Consultas_medicas.DAO
             }
         }
 
+        //query para pesquisar clientes por nome no CPF
         public DataTable PesquisarPORCPF(Clientes clientes)
         {
             try
@@ -203,7 +206,7 @@ namespace Consultas_medicas.DAO
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 DataTable dtconsultas = new DataTable();
 
-                comando = new MySqlCommand("SELECT CodCliente AS 'CODIGO', nomeCliente AS 'CLIENTE', cpfCliente AS 'CPF', emailCliente AS 'EMAIL', TelefoneCelularCli AS 'CELULAR', TelefoneFixoCli AS 'TELEFONE', enderecoCliente AS 'ENDERECO', cepCliente AS 'CEP', bairroCliente AS 'BAIRRO', numeroResidenciaCliente AS 'NUMERO', complementoCliente AS 'COMPLEMENTO' FROM tb_cliente WHERE cpfCliente LIKE @cpfCliente '%' ORDER BY cpfCliente ", conection);
+                comando = new MySqlCommand("SELECT CodCliente AS 'CODIGO', nomeCliente AS 'CLIENTE', cpfCliente AS 'CPF', emailCliente AS 'EMAIL', TelefoneCelularCli AS 'CELULAR', TelefoneFixoCli AS 'TELEFONE', enderecoCliente AS 'ENDERECO',cidadeCliente AS 'CIDADE', estadoCliente AS 'ESTADO', cepCliente AS 'CEP', bairroCliente AS 'BAIRRO', numeroResidenciaCliente AS 'NUMERO', complementoCliente AS 'COMPLEMENTO',referencia_cliente AS 'REFERENCIA' FROM tb_cliente WHERE cpfCliente LIKE @cpfCliente '%' ORDER BY cpfCliente ", conection);
                 comando.Parameters.AddWithValue("@cpfCliente", clientes.cpfCliente);
                 da.SelectCommand = comando;
                 da.Fill(dtconsultas);

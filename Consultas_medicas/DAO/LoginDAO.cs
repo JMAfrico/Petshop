@@ -13,6 +13,7 @@ namespace Consultas_medicas.DAO
 
         MySqlCommand comando = null;
 
+        //query para salvar um novo usuário no Banco de dados
         public void Salvar(Login login)
         {
             try
@@ -42,6 +43,8 @@ namespace Consultas_medicas.DAO
         public bool tem = false;
         public string msg = "";
         MySqlDataReader dr;
+
+        //query para verificar se existe esse usuário no Banco de dados
         public bool verificarLogin(string nomeUsuario, string senhaUsuario)
         {
             try

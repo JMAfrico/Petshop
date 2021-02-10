@@ -12,6 +12,8 @@ namespace Consultas_medicas.BLL
     {
         LoginDAO loginDao = new LoginDAO();
 
+
+        //Método controlador para salvar novo usuario
         public void salvar(Login login)
         {
             try
@@ -25,6 +27,7 @@ namespace Consultas_medicas.BLL
 
         }
 
+        //Método controlador para verificar acesso de usuario
         public class Controle
         {
             public bool tem;

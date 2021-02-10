@@ -12,10 +12,10 @@ namespace Consultas_medicas.BLL
     {
         ConsultasDAO consultasDAO = new ConsultasDAO();
 
-		
-		
+
+        //Método controlador para salvar nova consulta
         public void salvar(Consultas consultas)
-        {//salvar clientes
+        {
             try
             {
                 consultasDAO.Salvar(consultas);
@@ -26,13 +26,13 @@ namespace Consultas_medicas.BLL
             }
 
         }
-		
-		
-		
+
+
+        //Método controlador para listar cliente na tabela de consulta
         public DataTable listarClienteConsulta()
         {
             try
-            {//listar cliente da tabela cliente na tabela consultas
+            {
                 DataTable dt = new DataTable();
                 dt = consultasDAO.listarClienteConsulta();
                 return dt;
@@ -43,10 +43,105 @@ namespace Consultas_medicas.BLL
             }
 
         }
-		
-		
-		
 
+
+        //LISTAR O SERVICO DO RESPECTIVO CLIENTE
+        public DataTable listarItensServicoCliente()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = consultasDAO.listarItemServicoCliente();
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+
+        }
+
+        //LISTAR O PRODUTO DO RESPECTIVO CLIENTE
+        public DataTable listarProdutosServicoCliente()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = consultasDAO.listarItemProdutoCliente();
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+
+        }
+
+        //Método controlador para pesquisar servicos por nome do cliente
+        public DataTable pesquisarItensServicoCliente(Clientes clientes,Consultas consultas)
+        {
+            try
+            {
+
+                DataTable dt = new DataTable();
+                dt = consultasDAO.PesquisarItemServicoCliente(clientes, consultas);
+
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+
+
+        //Método controlador para pesquisar produtos por nome do cliente
+        public DataTable pesquisarItensProdutosCliente(Clientes clientes)
+        {
+            try
+            {
+
+                DataTable dt = new DataTable();
+                dt = consultasDAO.PesquisarItemProdutoCliente(clientes);
+
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        public DataTable listarItensServicoClienteData(Consultas consultas)
+        {
+            try
+            {
+
+                DataTable dt = new DataTable();
+                dt = consultasDAO.PesquisarItemServicoClienteData(consultas);
+
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+
+
+        //Método controlador para listar consultas na tabela
         public DataTable listarConsulta()
         {
             try
@@ -61,11 +156,11 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
-		
-		
+
+
+
+
+        //Método controlador para editar consulta
         public void editar(Consultas consultas)
         {
             try
@@ -78,11 +173,10 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
-		
-		
+
+
+
+        //Método controlador para excluir consulta
 		public void excluir(Consultas consultas)
         {
             try
@@ -95,16 +189,16 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
-						//pesquisar
-		public DataTable pesquisar(Consultas consultas)
+
+
+
+        //Método controlador para pesquisar consulta por nome de cliente
+		public DataTable pesquisar(Clientes clientes)
         {
             try
             {
                 DataTable dt = new DataTable();
-                dt = consultasDAO.Pesquisar(consultas);
+                dt = consultasDAO.Pesquisar(clientes);
 
                 return dt;
             }
@@ -114,12 +208,14 @@ namespace Consultas_medicas.BLL
             }
         }
 
-        public DataTable pesquisarCPF(Clientes clientes)
+
+        //Método controlador para pesquisar consulta por CPF de cliente
+        public DataTable pesquisarCPF(Consultas consultas)
         {
             try
             {
                 DataTable dt = new DataTable();
-                dt = consultasDAO.PesquisarPORCPF(clientes);
+                dt = consultasDAO.PesquisarPORcodConsulta(consultas);
 
                 return dt;
             }
@@ -129,12 +225,13 @@ namespace Consultas_medicas.BLL
             }
         }
 
-        public DataTable listarAnimal()
+        //Método controlador para listar cliente e seus animais animais no combobox
+        public DataTable listarCliente_e_AnimalCombobox()
         {
             try
-            {//listar animais da tabela animal na tabela cliente
+            {
                 DataTable dt = new DataTable();
-                dt = consultasDAO.ListarAnimal();
+                dt = consultasDAO.listarCliente_e_AnimalCombobox();
 
 
                 return dt;

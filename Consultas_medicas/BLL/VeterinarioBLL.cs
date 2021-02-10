@@ -15,7 +15,7 @@ namespace Consultas_medicas.BLL
 		
 		
 		
-
+        //Método controlador para salvar veterinarios
         public void salvar(Veterinarios veterinario)
         {
             try
@@ -36,7 +36,7 @@ namespace Consultas_medicas.BLL
         public DataTable listarVeterinarios()
         {
             try
-            {//listar veterinarios
+            {//Método controlador para listar veterinarios
                 DataTable dtveterinarios = new DataTable();
                 dtveterinarios = veterinariosDAO.listarVeterinarios();
 
@@ -47,10 +47,10 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
-		
+
+
+
+        //Método controlador para editar veterinarios
         public void editar(Veterinarios veterinarios)
         {
             try
@@ -63,9 +63,9 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
+
+
+        //Método controlador para excluir veterinarios
 		public void excluir(Veterinarios veterinarios)
         {
             try
@@ -78,9 +78,9 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-				//pesquisar
+
+
+        //Método controlador para pesquisar veterinarios por nome ao digitar no textbox
 		public DataTable pesquisar(Veterinarios veterinarios)
         {
             try
@@ -97,6 +97,7 @@ namespace Consultas_medicas.BLL
             }
         }
 
+        //Método controlador para pesquisar veterinarios por CRMV ao digitar no textbox
         public DataTable pesquisarCRMV(Veterinarios veterinarios)
         {
             try
@@ -113,5 +114,21 @@ namespace Consultas_medicas.BLL
             }
         }
 
+        //Método controlador para listar veterinarios no combobox
+        public DataTable listarVeteriNoCombobox()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = veterinariosDAO.listarVeterinariosCombobox();
+
+
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

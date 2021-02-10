@@ -5,6 +5,8 @@ using System.Text;
 
 namespace Consultas_medicas.Models
 {
+
+    //Essa classe deve conter os mesmos atributos da tabela do banco de dados , junto com get e set
     public class Veterinarios
     {
         public int codVeterinario { get; set; }
@@ -18,6 +20,10 @@ namespace Consultas_medicas.Models
         public string especializacao { get; set; }
 
         public string enderecoVeterinario { get; set; }
+
+        public string cidadeVeterinario { get; set; }
+
+        public string estadoVeterinario { get; set; }
 
         public string bairroVeterinario { get; set; }
 

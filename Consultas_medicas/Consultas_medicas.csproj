@@ -35,6 +35,8 @@
     <StartupObject>Consultas_medicas.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="MySql.Data">
       <HintPath>conexao\MySql.Data.dll</HintPath>
     </Reference>
@@ -43,6 +45,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -52,115 +57,179 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\AnimalBLL.cs" />
+    <Compile Include="BLL\AnimalClienteBLL.cs" />
     <Compile Include="BLL\ClienteBLL.cs" />
     <Compile Include="BLL\ConsultaBLL.cs" />
     <Compile Include="BLL\FuncionarioBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\ProdutosBLL.cs" />
+    <Compile Include="BLL\ProdutosClienteBLL.cs" />
+    <Compile Include="BLL\raca_animalBLL.cs" />
+    <Compile Include="BLL\ServicosBLL.cs" />
+    <Compile Include="BLL\tipo_animalBLL.cs" />
     <Compile Include="BLL\VeterinarioBLL.cs" />
-    <Compile Include="BuscaEndereco.cs" />
-    <Compile Include="consultaDataSet.Designer.cs">
+    <Compile Include="Connected Services\WebServiceCorreios\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>consultaDataSet.xsd</DependentUpon>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="consultasmedicasDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>consultasmedicasDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Consulta_appDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Consulta_appDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\AnimaisDAO.cs" />
+    <Compile Include="DAO\AnimaisClienteDAO.cs" />
     <Compile Include="DAO\ClientesDAO.cs" />
     <Compile Include="DAO\conexao.cs" />
     <Compile Include="DAO\ConsultasDAO.cs" />
     <Compile Include="DAO\FuncionariosDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\ProdutosClienteDAO.cs" />
+    <Compile Include="DAO\ProdutosDAO.cs" />
+    <Compile Include="DAO\raca_animalDAO.cs" />
+    <Compile Include="DAO\ServicosDAO.cs" />
+    <Compile Include="DAO\tipo_animalDAO.cs" />
     <Compile Include="DAO\VeterinariosDAO.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Formularios\Form_Cadastro_tipo_animal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Formularios\Form_Cadastro_tipo_animal.Designer.cs">
+      <DependentUpon>Form_Cadastro_tipo_animal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Formularios\Form_consulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Formularios\Form_consulta.Designer.cs">
+      <DependentUpon>Form_consulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="form_animal.cs">
+    <Compile Include="Formularios\form_prodServ_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form_animal.Designer.cs">
-      <DependentUpon>form_animal.cs</DependentUpon>
+    <Compile Include="Formularios\form_prodServ_cliente.Designer.cs">
+      <DependentUpon>form_prodServ_cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_cadastrar_login.cs">
+    <Compile Include="Formularios\Form_produtos_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_cadastrar_login.Designer.cs">
+    <Compile Include="Formularios\Form_produtos_cliente.Designer.cs">
+      <DependentUpon>Form_produtos_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_servicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_servicos.Designer.cs">
+      <DependentUpon>Form_servicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_Rel_Cliente_animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_Rel_Cliente_animal.Designer.cs">
+      <DependentUpon>Form_Rel_Cliente_animal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_cadastrar_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_cadastrar_login.Designer.cs">
       <DependentUpon>Form_cadastrar_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Funcionario.cs">
+    <Compile Include="Formularios\Form_Funcionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Funcionario.Designer.cs">
+    <Compile Include="Formularios\Form_Funcionario.Designer.cs">
       <DependentUpon>Form_Funcionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Login.cs">
+    <Compile Include="Formularios\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Login.Designer.cs">
+    <Compile Include="Formularios\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_medico.cs">
+    <Compile Include="Formularios\Form_splash_screen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_medico.Designer.cs">
-      <DependentUpon>Form_medico.cs</DependentUpon>
+    <Compile Include="Formularios\Form_splash_screen.Designer.cs">
+      <DependentUpon>Form_splash_screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_paciente.cs">
+    <Compile Include="Formularios\Form_veterinario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_paciente.Designer.cs">
-      <DependentUpon>Form_paciente.cs</DependentUpon>
+    <Compile Include="Formularios\Form_veterinario.Designer.cs">
+      <DependentUpon>Form_veterinario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Animais.cs" />
+    <Compile Include="Formularios\Form_busca_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_busca_cliente.Designer.cs">
+      <DependentUpon>Form_busca_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form_cliente.Designer.cs">
+      <DependentUpon>Form_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnimaisCliente.cs" />
     <Compile Include="Models\Clientes.cs" />
     <Compile Include="Models\Consultas.cs" />
     <Compile Include="Models\Funcionarios.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Produtos.cs" />
+    <Compile Include="Models\ProdutosCliente.cs" />
+    <Compile Include="Models\raca_animal.cs" />
+    <Compile Include="Models\Servicos.cs" />
+    <Compile Include="Models\tipo_animal.cs" />
     <Compile Include="Models\Veterinarios.cs" />
+    <Compile Include="petshop_2020DataSet.cs">
+      <DependentUpon>petshop_2020DataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="petshop_2020DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>petshop_2020DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\Form_relatorio_clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\Form_relatorio_clientes.Designer.cs">
+      <DependentUpon>Form_relatorio_clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Validacao.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Form_Cadastro_tipo_animal.resx">
+      <DependentUpon>Form_Cadastro_tipo_animal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Form_consulta.resx">
+      <DependentUpon>Form_consulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form_animal.resx">
-      <DependentUpon>form_animal.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\form_prodServ_cliente.resx">
+      <DependentUpon>form_prodServ_cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_cadastrar_login.resx">
+    <EmbeddedResource Include="Formularios\Form_produtos_cliente.resx">
+      <DependentUpon>Form_produtos_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_servicos.resx">
+      <DependentUpon>Form_servicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_Rel_Cliente_animal.resx">
+      <DependentUpon>Form_Rel_Cliente_animal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_cadastrar_login.resx">
       <DependentUpon>Form_cadastrar_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Funcionario.resx">
+    <EmbeddedResource Include="Formularios\Form_Funcionario.resx">
       <DependentUpon>Form_Funcionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Login.resx">
+    <EmbeddedResource Include="Formularios\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_medico.resx">
-      <DependentUpon>Form_medico.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Form_splash_screen.resx">
+      <DependentUpon>Form_splash_screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_paciente.resx">
-      <DependentUpon>Form_paciente.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Form_veterinario.resx">
+      <DependentUpon>Form_veterinario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_busca_cliente.resx">
+      <DependentUpon>Form_busca_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form_cliente.resx">
+      <DependentUpon>Form_cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,39 +241,75 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
-    <None Include="consultaDataSet.xsc">
-      <DependentUpon>consultaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="consultaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>consultaDataSet.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Relatorios\Form_relatorio_clientes.resx">
+      <DependentUpon>Form_relatorio_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\report_raca_atualizado.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_clientes.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_consultas.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_funcionarios.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_login.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_raca.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_relacionamento_clienteAnimal.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_servicos.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_tipo.rdlc" />
+    <EmbeddedResource Include="Relatorios\report_veterinarios.rdlc" />
+    <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="consultaDataSet.xss">
-      <DependentUpon>consultaDataSet.xsd</DependentUpon>
+    <None Include="Connected Services\WebServiceCorreios\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="consultasmedicasDataSet.xsc">
-      <DependentUpon>consultasmedicasDataSet.xsd</DependentUpon>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="consultasmedicasDataSet.xsd">
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.dimensaoTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.mensagemParametrizadaTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.servicoAdicionalTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.tipoEmbalagem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebServiceCorreios\Consultas_medicas.WebServiceCorreios.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="petshop_2020DataSet.xsc">
+      <DependentUpon>petshop_2020DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="petshop_2020DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>consultasmedicasDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>petshop_2020DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="consultasmedicasDataSet.xss">
-      <DependentUpon>consultasmedicasDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Consulta_appDataSet.xsc">
-      <DependentUpon>Consulta_appDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Consulta_appDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Consulta_appDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Consulta_appDataSet.xss">
-      <DependentUpon>Consulta_appDataSet.xsd</DependentUpon>
+    <None Include="petshop_2020DataSet.xss">
+      <DependentUpon>petshop_2020DataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Cad_consulta.datasource" />
     <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.ConsultaTableAdapter.datasource" />
@@ -212,6 +317,16 @@
     <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.PacienteTableAdapter.datasource" />
     <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
     <None Include="Properties\DataSources\Consultas_medicas.Consulta_appDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.DAO.ClientesDAO.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.AnimaisCliente.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.Clientes.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.Consultas.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.Funcionarios.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.Login.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.raca_animal.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.Servicos.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.tipo_animal.datasource" />
+    <None Include="Properties\DataSources\Consultas_medicas.Models.Veterinarios.datasource" />
     <None Include="Properties\DataSources\Consultas_medicas.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Consultas_medicas.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\Consulta_appDataSet.ConsultaDataTable.datasource" />
@@ -273,9 +388,33 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Consulta_app.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\img_pata2_60x60_esquerdo.png" />
+    <None Include="Resources\img_pata2_60x60_direito.png" />
+    <None Include="Resources\img_pata2_60x60_cima.png" />
+    <None Include="Resources\img_pata2_60x60_baixo.png" />
+    <None Include="Resources\img_pata2.png" />
+    <None Include="Resources\img_pata_60x60.png" />
+    <None Include="Resources\img_pata.png" />
+    <None Include="Resources\img_voltar_30px.png" />
+    <None Include="Resources\img_editar_30px.png" />
+    <None Include="Resources\interrogacao.png" />
+    <None Include="Resources\Slide1.PNG" />
+    <None Include="Resources\Slide1.JPG" />
+    <None Include="Resources\Img_splash_screen2.JPG" />
+    <None Include="Resources\Img_splash_screen.JPG" />
+    <None Include="Connected Services\WebServiceCorreios\configuration91.svcinfo" />
+    <None Include="Connected Services\WebServiceCorreios\configuration.svcinfo" />
+    <None Include="Connected Services\WebServiceCorreios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\seta_20px.png" />
+    <None Include="Resources\pesquisar_imagem_30px.png" />
+    <None Include="Resources\ok_imagem2_50px.png" />
+    <None Include="Resources\editar_imagem_30px.png" />
+    <None Include="Resources\editar_30px.png" />
+    <None Include="Resources\cancelar_30px.png" />
+    <None Include="Resources\Cancel_imagem_30px.png" />
     <None Include="Imagens\logOpET_OF.png" />
     <None Include="Imagens\LOGOnomePet.png" />
     <None Include="Resources\cadastroAnimal.png" />
@@ -298,6 +437,14 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WebServiceCorreios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-right-arrow-icon-png-image_4224405.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seta.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

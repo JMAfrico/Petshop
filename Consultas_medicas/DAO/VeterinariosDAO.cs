@@ -12,19 +12,22 @@ namespace Consultas_medicas.DAO
     {
         MySqlCommand comando = null;
 
+        //query para salvar veterinario no Banco de dados
         public void Salvar(Veterinarios veterinarios)
         {
             try
             {
                 AbrirConexao();
 
-                comando = new MySqlCommand("INSERT INTO tb_veterinario(nomeVeterinario,sobrenomeVeterinario,crmv,especializacao,enderecoVeterinario,bairroVeterinario,cepVeterinario,numeroResidenciaVeterinario,complementoVeterinario,emailVeterinario,telefoneFixoVet,telefoneCelularVet) VALUES (@nome,@sobrenome,@crmv,@especializacao,@endereco,@bairro,@cep,@numero,@complemento,@email,@telfixo,@telcel)", conection);
+                comando = new MySqlCommand("INSERT INTO tb_veterinario(nomeVeterinario,sobrenomeVeterinario,crmv,especializacao,enderecoVeterinario,cidadeVeterinario,estadoVeterinario,bairroVeterinario,cepVeterinario,numeroResidenciaVeterinario,complementoVeterinario,emailVeterinario,telefoneFixoVet,telefoneCelularVet) VALUES (@nome,@sobrenome,@crmv,@especializacao,@endereco,@cidade,@estado,@bairro,@cep,@numero,@complemento,@email,@telfixo,@telcel)", conection);
 
                 comando.Parameters.AddWithValue("@nome",veterinarios.nomeVeterinario);
                 comando.Parameters.AddWithValue("@sobrenome",veterinarios.sobrenomeVeterinario);
                 comando.Parameters.AddWithValue("@crmv",veterinarios.crmv);
                 comando.Parameters.AddWithValue("@especializacao",veterinarios.especializacao);
                 comando.Parameters.AddWithValue("@endereco",veterinarios.enderecoVeterinario);
+                comando.Parameters.AddWithValue("@cidade", veterinarios.cidadeVeterinario);
+                comando.Parameters.AddWithValue("@estado", veterinarios.estadoVeterinario);
                 comando.Parameters.AddWithValue("@bairro",veterinarios.bairroVeterinario);
                 comando.Parameters.AddWithValue("@cep",veterinarios.cepVeterinario);
                 comando.Parameters.AddWithValue("@numero",veterinarios.numeroResidenciaVeterinario);
@@ -45,15 +48,17 @@ namespace Consultas_medicas.DAO
                 FecharConexao();
             }
         }
+
+        //query para listar os veterinarios do banco de dados
         public DataTable listarVeterinarios()
         {
             try
-            {//MOSTRAR A LISTA DE VETERINÁRIOS
+            {
                 AbrirConexao();
 
                 DataTable dtveterinario = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter();
-                comando = new MySqlCommand("SELECT codVeterinario AS 'CODIGO',nomeVeterinario AS 'NOME',sobrenomeVeterinario AS 'SOBRENOME',crmv AS 'CRMV',especializacao AS 'ESPECIALIZACAO',enderecoVeterinario AS 'ENDERECO',bairroVeterinario AS 'BAIRRO',cepVeterinario AS 'CEP',numeroResidenciaVeterinario AS 'NUMERO',complementoVeterinario AS 'COMPLEMENTO',emailVeterinario AS 'EMAIL',telefoneFixoVet AS 'FIXO',telefoneCelularVet AS 'CELULAR' FROM tb_veterinario", conection);
+                comando = new MySqlCommand("SELECT codVeterinario AS 'CODIGO',nomeVeterinario AS 'NOME',sobrenomeVeterinario AS 'SOBRENOME',crmv AS 'CRMV',especializacao AS 'ESPECIALIZACAO',enderecoVeterinario AS 'ENDERECO',cidadeVeterinario AS 'CIDADE', estadoVeterinario AS 'ESTADO', bairroVeterinario AS 'BAIRRO',cepVeterinario AS 'CEP',numeroResidenciaVeterinario AS 'NUMERO',complementoVeterinario AS 'COMPLEMENTO',emailVeterinario AS 'EMAIL',telefoneFixoVet AS 'FIXO',telefoneCelularVet AS 'CELULAR' FROM tb_veterinario", conection);
                 da.SelectCommand = comando;
                 da.Fill(dtveterinario);
                 return dtveterinario;
@@ -68,13 +73,15 @@ namespace Consultas_medicas.DAO
                 FecharConexao();
             }
         }
+
+        //query para editar veterinario no Banco de dados
         public void Editar(Veterinarios veterinarios)
         {
             try
             {
                 AbrirConexao();
 
-                comando = new MySqlCommand("UPDATE tb_veterinario SET nomeVeterinario = @nome, sobrenomeVeterinario = @sobrenome,crmv = @crmv ,especializacao = @especializacao ,enderecoVeterinario = @endereco,bairroVeterinario = @bairro,cepVeterinario = @cep,numeroResidenciaVeterinario = @numero,complementoVeterinario = @complemento,emailVeterinario = @email,telefoneFixoVet = @telfixo,telefoneCelularVet = @telcel WHERE codVeterinario = @codVeterinario", conection);
+                comando = new MySqlCommand("UPDATE tb_veterinario SET nomeVeterinario = @nome, sobrenomeVeterinario = @sobrenome,crmv = @crmv ,especializacao = @especializacao ,enderecoVeterinario = @endereco,cidadeVeterinario = @cidade , estadoVeterinario = @estado,bairroVeterinario = @bairro,cepVeterinario = @cep,numeroResidenciaVeterinario = @numero,complementoVeterinario = @complemento,emailVeterinario = @email,telefoneFixoVet = @telfixo,telefoneCelularVet = @telcel WHERE codVeterinario = @codVeterinario", conection);
 
                 comando.Parameters.AddWithValue("@codVeterinario", veterinarios.codVeterinario);
                 comando.Parameters.AddWithValue("@nome", veterinarios.nomeVeterinario);
@@ -82,6 +89,8 @@ namespace Consultas_medicas.DAO
                 comando.Parameters.AddWithValue("@crmv", veterinarios.crmv);
                 comando.Parameters.AddWithValue("@especializacao", veterinarios.especializacao);
                 comando.Parameters.AddWithValue("@endereco", veterinarios.enderecoVeterinario);
+                comando.Parameters.AddWithValue("@cidade", veterinarios.cidadeVeterinario);
+                comando.Parameters.AddWithValue("@estado", veterinarios.estadoVeterinario);
                 comando.Parameters.AddWithValue("@bairro", veterinarios.bairroVeterinario);
                 comando.Parameters.AddWithValue("@cep", veterinarios.cepVeterinario);
                 comando.Parameters.AddWithValue("@numero", veterinarios.numeroResidenciaVeterinario);
@@ -104,8 +113,9 @@ namespace Consultas_medicas.DAO
                 FecharConexao();
             }
         }
-		
-		
+
+
+        //query para exluir veterinario no Banco de dados
 		public void Excluir(Veterinarios veterinarios) 
         {
             try
@@ -130,16 +140,17 @@ namespace Consultas_medicas.DAO
             }
         }
 
+        //query para pesquisar veterinario por nome no Banco de dados
         public DataTable Pesquisar(Veterinarios veterinarios)
         {
             try
-            {//PESQUISA DE veterinarios
+            {
                 AbrirConexao();
 
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 DataTable dtveterinario = new DataTable();
 
-                comando = new MySqlCommand("SELECT codVeterinario AS 'CODIGO',nomeVeterinario AS 'NOME',sobrenomeVeterinario AS 'SOBRENOME',crmv AS 'CRMV',especializacao AS 'ESPECIALIZACAO',enderecoVeterinario AS 'ENDERECO',bairroVeterinario AS 'BAIRRO',cepVeterinario AS 'CEP',numeroResidenciaVeterinario AS 'NUMERO',complementoVeterinario AS 'COMPLEMENTO',emailVeterinario AS 'EMAIL',telefoneFixoVet AS 'FIXO',telefoneCelularVet AS 'CELULAR' FROM tb_veterinario WHERE nomeVeterinario LIKE @nomeVeterinario '%' ORDER BY nomeVeterinario", conection);
+                comando = new MySqlCommand("SELECT codVeterinario AS 'CODIGO',nomeVeterinario AS 'NOME',sobrenomeVeterinario AS 'SOBRENOME',crmv AS 'CRMV',especializacao AS 'ESPECIALIZACAO',enderecoVeterinario AS 'ENDERECO',cidadeVeterinario AS 'CIDADE', estadoVeterinario AS 'ESTADO',bairroVeterinario AS 'BAIRRO',cepVeterinario AS 'CEP',numeroResidenciaVeterinario AS 'NUMERO',complementoVeterinario AS 'COMPLEMENTO',emailVeterinario AS 'EMAIL',telefoneFixoVet AS 'FIXO',telefoneCelularVet AS 'CELULAR' FROM tb_veterinario WHERE nomeVeterinario LIKE @nomeVeterinario '%' ORDER BY nomeVeterinario", conection);
                 comando.Parameters.AddWithValue("@nomeVeterinario", veterinarios.nomeVeterinario);
                 da.SelectCommand = comando;
                 da.Fill(dtveterinario);
@@ -155,9 +166,9 @@ namespace Consultas_medicas.DAO
                 FecharConexao();
             }
         }
-            
 
 
+        //query para pesquisar veterinario por CRMV no Banco de dados
          public DataTable PesquisarCRMV(Veterinarios veterinarios)
             {
                 try
@@ -167,7 +178,7 @@ namespace Consultas_medicas.DAO
                     MySqlDataAdapter da = new MySqlDataAdapter();
                     DataTable dtveterinario = new DataTable();
 
-                    comando = new MySqlCommand("SELECT nomeVeterinario AS 'NOME',sobrenomeVeterinario AS 'SOBRENOME',crmv AS 'CRMV',especializacao AS 'ESPECIALIZACAO',enderecoVeterinario AS 'ENDERECO',bairroVeterinario AS 'BAIRRO',cepVeterinario AS 'CEP',numeroResidenciaVeterinario AS 'NUMERO',complementoVeterinario AS 'COMPLEMENTO',emailVeterinario AS 'EMAIL',telefoneFixoVet AS 'FIXO',telefoneCelularVet AS 'CELULAR' FROM tb_veterinario WHERE crmv LIKE @crmv '%' ORDER BY crmv", conection);
+                    comando = new MySqlCommand("SELECT codVeterinario AS 'CODIGO',nomeVeterinario AS 'NOME',sobrenomeVeterinario AS 'SOBRENOME',crmv AS 'CRMV',especializacao AS 'ESPECIALIZACAO',enderecoVeterinario AS 'ENDERECO',cidadeVeterinario AS 'CIDADE', estadoVeterinario AS 'ESTADO',bairroVeterinario AS 'BAIRRO',cepVeterinario AS 'CEP',numeroResidenciaVeterinario AS 'NUMERO',complementoVeterinario AS 'COMPLEMENTO',emailVeterinario AS 'EMAIL',telefoneFixoVet AS 'FIXO',telefoneCelularVet AS 'CELULAR' FROM tb_veterinario WHERE crmv LIKE @crmv '%' ORDER BY crmv", conection);
                     comando.Parameters.AddWithValue("@crmv", veterinarios.crmv);
                     da.SelectCommand = comando;
                     da.Fill(dtveterinario);
@@ -185,5 +196,33 @@ namespace Consultas_medicas.DAO
                 
         
         }
+
+         //método para listar os veterinarios no combobox do formulario de consultas
+         public DataTable listarVeterinariosCombobox()
+         {
+             try
+             {
+
+                 AbrirConexao();
+
+                 DataTable dt = new DataTable();
+                 MySqlDataAdapter da = new MySqlDataAdapter();
+                 comando = new MySqlCommand("SELECT codVeterinario,nomeVeterinario FROM tb_veterinario", conection);
+                 da.SelectCommand = comando;
+                 da.Fill(dt);
+
+                 return dt;
+
+             }
+             catch (Exception erro)
+             {
+                 throw erro;
+             }
+             finally
+             {
+                 FecharConexao();
+             }
+
+         }
     }
 }

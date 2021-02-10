@@ -12,13 +12,10 @@ namespace Consultas_medicas.BLL
     public class ClienteBLL
     {
         ClientesDAO clientesDAO = new ClientesDAO();
-		
-		
-		
-		
 
+        //Método controlador para salvar novo cliente
         public void salvar(Clientes clientes)
-        {//salvar clientes
+        {
             try
             {
                 clientesDAO.Salvar(clientes);
@@ -29,34 +26,13 @@ namespace Consultas_medicas.BLL
             }
 
         }
-		
-		
-		
-		
-        public DataTable listar()
-        {
-            try
-            {//listar animais da tabela animal na tabela cliente
-                DataTable dt = new DataTable();
-                dt = clientesDAO.listar();
 
 
-                return dt;
-            }
-            catch (Exception erro)
-            {
-                throw erro;
-            }
-        }
-
-		
-		
-		
-		
+        //Método controlador para listar clientes
         public DataTable listarClientes()
         {
             try
-            {//listar clientes
+            {
                 DataTable dtclientes = new DataTable();
                 dtclientes = clientesDAO.listarClientes();
 
@@ -67,10 +43,25 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
-		
+        
+        //Método controlador para listar clientes combobox
+        public DataTable listarCliCombobox()
+        {
+            try
+            {
+                DataTable dtclientes = new DataTable();
+                dtclientes = clientesDAO.listarCliCombobox();
+
+                return dtclientes;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+
+        //Método controlador para editar clientes
         public void editar(Clientes clientes)
         {
             try
@@ -83,9 +74,9 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
+
+
+        //Método controlador para excluir clientes
 	    public void excluir(Clientes clientes)
         {
             try
@@ -98,9 +89,9 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-				//pesquisar
+
+
+        //Método controlador para pesquisar clientes por nome
 		public DataTable pesquisar(Clientes clientes)
         {
             try
@@ -117,6 +108,7 @@ namespace Consultas_medicas.BLL
             }
         }
 
+        //Método controlador para pesquisar clientes por cpf
         public DataTable pesquisarCPF(Clientes clientes)
         {
             try

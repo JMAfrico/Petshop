@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Consultas_medicas.Models
 {
+    //Essa classe deve conter os mesmos atributos da tabela do banco de dados , junto com get e set
     public class Funcionarios
     {
         public int codFuncionario { get; set; }
@@ -18,6 +19,10 @@ namespace Consultas_medicas.Models
         public Int64 telefoneFixoFunc { get; set; }
 
         public Int64 telefoneCelularFunc { get; set; }
+
+        public string cidadeFuncionario { get; set; }
+
+        public string estadoFuncionario { get; set; }
 
         public string enderecoFuncionario { get; set; }
 

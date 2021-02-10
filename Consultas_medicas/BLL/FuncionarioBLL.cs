@@ -12,10 +12,8 @@ namespace Consultas_medicas.BLL
     {
         FuncionariosDAO funcionarioDAO = new FuncionariosDAO();
 
-		
-		
-		
-		
+
+        //Método controlador para salvar funcionarios
         public void salvar(Funcionarios funcionario)
         {
             try
@@ -28,14 +26,14 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
-		
+
+
+
+        //Método controlador para listar funcionarios
         public DataTable listarFuncionarios()
         {
             try
-            {//listar clientes
+            {
                 DataTable dtfunc = new DataTable();
                 dtfunc = funcionarioDAO.listarFuncionarios();
 
@@ -46,10 +44,10 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
-		
+
+
+
+        //Método controlador para editar funcionarios
         public void editar(Funcionarios funcionario)
         {
             try
@@ -62,9 +60,9 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		
-		
+
+
+        //Método controlador para excluir funcionarios
 		public void excluir(Funcionarios funcionario)
         {
             try
@@ -77,8 +75,8 @@ namespace Consultas_medicas.BLL
                 throw erro;
             }
         }
-		
-		//pesquisar
+
+        //Método controlador para pesquisar funcionarios
 		public DataTable pesquisar(Funcionarios funcionario)
         {
             try

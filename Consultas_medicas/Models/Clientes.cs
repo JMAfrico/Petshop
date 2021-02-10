@@ -21,6 +21,10 @@ namespace Consultas_medicas.Models
 
         public string enderecoCliente { get; set; }
 
+        public string cidadeCliente { get; set; }
+
+        public string estadoCliente { get; set; }
+
         public int numeroResidenciaCliente { get; set; }
 
         public string bairroCliente { get; set; }
@@ -29,6 +33,6 @@ namespace Consultas_medicas.Models
 
         public string ComplementoCliente { get; set; }
 
-        public string CodAnimal { get; set; }
+        public string referencia_cliente { get; set; }
     }
 }
